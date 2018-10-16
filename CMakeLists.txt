@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.2)
 
 set(
     HUNTER_CACHE_SERVERS
-    "https://github.com/forexample/hunter-cache"
+    "https://github.com/xnagireddy/hunter-cache"
     CACHE
     STRING
     "Default cache server"

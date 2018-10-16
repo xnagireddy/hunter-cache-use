@@ -3,7 +3,7 @@
 environment:
   global:
     GITHUB_USER_PASSWORD:
-      secure: Ze5ZYWCwKWJRWD+sDvCkuGwPFzKtKdqgUDT2fgSdPGVMwW2q70n20rNlnDR0JObq
+      secure: O6C2RmmvRS6Gso5CEHAiRnRbPzzESD4xVHjnP3hiGKdsqzPjgvQVw4O/uWcY2vJs
 
   matrix:
     - TYPE: Release
