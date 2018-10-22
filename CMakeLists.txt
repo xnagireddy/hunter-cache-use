@@ -2,23 +2,13 @@ cmake_minimum_required(VERSION 3.2)
 
 set(
     HUNTER_CACHE_SERVERS
-    "https://github.com/xnagireddy/hunter-cache"
+    "http://localhost:8081/artifactory/hunter"
     CACHE
     STRING
     "Default cache server"
 )
 
-# https://docs.travis-ci.com/user/environment-variables/#Default-Environment-Variables
-string(COMPARE EQUAL "$ENV{TRAVIS}" "true" is_travis)
-
-# https://www.appveyor.com/docs/environment-variables/
-string(COMPARE EQUAL "$ENV{APPVEYOR}" "True" is_appveyor)
-
-string(COMPARE EQUAL "$ENV{GITHUB_USER_PASSWORD}" "" password_is_empty)
-
-if((is_travis OR is_appveyor) AND NOT password_is_empty)
-  option(HUNTER_RUN_UPLOAD "Upload cache binaries" ON)
-endif()
+option(HUNTER_RUN_UPLOAD "Upload cache binaries" ON)
 
 set(
     HUNTER_PASSWORDS_PATH
@@ -30,10 +20,11 @@ set(
 
 include(cmake/HunterGate.cmake)
 HunterGate(
-    URL "https://github.com/ruslo/hunter/archive/v0.20.1.tar.gz"
-    SHA1 "401d911d9b1c2c1858a5fa351673753b3ae6d1b0"
+    URL "https://github.com/ruslo/hunter/archive/v0.23.34.tar.gz"
+    SHA1 "70287b1ffa810ee4e952052a9adff9b4856d0d54"
 )
+
 
 project(foo)
 
-hunter_add_package(sugar)
+hunter_add_package(PNG)
